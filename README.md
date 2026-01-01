@@ -50,6 +50,9 @@ An **end-to-end IoT-based temperature and humidity monitoring system** using a *
 ## 📊 Output
 Live temperature and humidity data visualized on the ThingSpeak dashboard.
 
+![ThingSpeak Dashboard](images/thingspeak_output.png)
+
+
 ---
 
 
