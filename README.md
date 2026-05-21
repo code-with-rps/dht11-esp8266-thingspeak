@@ -1,62 +1,12 @@
-# IoT-Based Temperature & Humidity Monitoring System 🌡️📊
+# DHT11 ESP8266 ThingSpeak Monitoring System
 
-An **end-to-end IoT-based temperature and humidity monitoring system** using a **DHT11 sensor** and **ESP8266 (NodeMCU)**, with real-time data visualization on the **ThingSpeak cloud platform**.
-
----
-
-## 🚀 Features
-- Real-time temperature and humidity monitoring
-- Wi-Fi enabled data transmission (2.4 GHz)
-- Cloud integration using ThingSpeak
-- Live graphical data visualization
-- Serial monitoring for debugging and status updates
+An IoT-based temperature and humidity monitoring system using ESP8266 NodeMCU and DHT11 sensor.  
+The system collects real-time environmental data and uploads it to the ThingSpeak cloud platform for remote monitoring and visualization.
 
 ---
-
-## 🧰 Hardware Used
-- ESP8266 NodeMCU
-- DHT11 Temperature & Humidity Sensor
-- Jumper wires
-- USB cable
-
----
-
-## 💻 Software & Tools
-- Arduino IDE
-- ESP8266WiFi Library
-- Adafruit DHT Sensor Library
-- Adafruit Unified Sensor Library
-- ThingSpeak Cloud Platform
-
----
-
-## 🔌 Circuit Connections
-
-| DHT11 Pin | ESP8266 NodeMCU |
-|----------|----------------|
-| VCC | 3.3V |
-| DATA | D4 (GPIO2) |
-| GND | GND |
-
----
-
-## ☁️ ThingSpeak Configuration
-- **Field 1** → Temperature (°C)
-- **Field 2** → Humidity (%)
-- **Minimum update interval** → 15 seconds
-
----
-
-## 📊 Output
-Live temperature and humidity data visualized on the ThingSpeak dashboard.
-
-![ThingSpeak Dashboard](images/thingspeak_output.png)
-
-
----
-
 
 ## 📁 Project Structure
+
 ```text
 dht11-esp8266-thingspeak/
 ├── code/
@@ -65,78 +15,150 @@ dht11-esp8266-thingspeak/
 │   └── thingspeak_output.png
 ├── README.md
 └── LICENSE
+```
 
+---
+
+## ✨ Features
+
+- Real-time temperature monitoring
+- Real-time humidity monitoring
+- Wi-Fi based IoT communication
+- Cloud data visualization using ThingSpeak
+- Simple and low-cost implementation
+- Serial monitor debugging support
+
+---
+
+## 🛠 Components Used
+
+| Component | Quantity |
+|------------|------------|
+| ESP8266 NodeMCU | 1 |
+| DHT11 Sensor | 1 |
+| Breadboard | 1 |
+| Jumper Wires | Several |
+| USB Cable | 1 |
+
+---
+
+## 🔌 Circuit Connections
+
+| DHT11 Pin | ESP8266 Pin |
+|------------|-------------|
+| VCC | 3.3V |
+| GND | GND |
+| DATA | D4 |
 
 ---
 
 ## 🔧 Setup Instructions
 
-1. Clone the repository:
+### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/code-with-rps/dht11-esp8266-thingspeak.git
-Open the Arduino file:
+```
 
-bash
-Copy code
+---
+
+### 2. Open the Arduino File
+
+```text
 code/dht11_esp8266_thingspeak.ino
-Install the required libraries from Arduino Library Manager:
+```
 
-ESP8266WiFi
+---
 
-Adafruit DHT Sensor Library
+### 3. Install Required Libraries
 
-Adafruit Unified Sensor
+Install the following libraries from the Arduino Library Manager:
 
-Update the following placeholders in the code:
+- ESP8266WiFi
+- Adafruit DHT Sensor Library
+- Adafruit Unified Sensor
 
-cpp
-Copy code
+---
+
+### 4. Update Wi-Fi and API Credentials
+
+Replace the placeholders in the code:
+
+```cpp
 const char* ssid = "YOUR_WIFI_NAME";
 const char* password = "YOUR_WIFI_PASSWORD";
 String apiKey = "YOUR_THINGSPEAK_API_KEY";
-Select the board and port:
+```
 
-Board: NodeMCU 1.0 (ESP-12E Module)
+---
 
-Port: COMxx
+### 5. Select Board and Port
 
-Upload the code to the ESP8266.
+- **Board:** NodeMCU 1.0 (ESP-12E Module)
+- **Port:** COMxx
 
-▶️ How It Works
-The DHT11 sensor measures temperature and humidity.
+---
 
-ESP8266 connects to a 2.4 GHz Wi-Fi network.
+### 6. Upload the Code
 
-Sensor data is sent to ThingSpeak using HTTP requests.
+Upload the program to the ESP8266 board using Arduino IDE.
 
-Data is displayed as live graphs on the ThingSpeak dashboard.
+---
 
-🧠 Learning Outcomes
-Sensor interfacing with ESP8266
+## ▶️ How It Works
 
-Wi-Fi networking and HTTP communication
+1. The DHT11 sensor measures temperature and humidity.
+2. ESP8266 connects to a 2.4 GHz Wi-Fi network.
+3. Sensor data is sent to ThingSpeak using HTTP requests.
+4. ThingSpeak displays the data as live graphs and charts.
+5. Users can remotely monitor environmental conditions.
 
-Cloud-based IoT data visualization
+---
 
-Serial communication and debugging
+## 📊 Output
 
-Understanding end-to-end IoT system architecture
+Below is the ThingSpeak cloud output:
 
-🔐 Security Note
-Wi-Fi credentials and ThingSpeak API keys are not included in this repository.
+![ThingSpeak Output](images/thingspeak_output.png)
+
+---
+
+## 🧠 Learning Outcomes
+
+- Sensor interfacing with ESP8266
+- Wi-Fi networking and HTTP communication
+- Cloud-based IoT data visualization
+- Serial communication and debugging
+- Understanding end-to-end IoT architecture
+
+---
+
+## 🔐 Security Note
+
+Wi-Fi credentials and ThingSpeak API keys are not included in this repository.  
 Users must add their own credentials before uploading the code.
 
-📌 Future Improvements
-Email or alert notifications on threshold breach
+---
 
-OLED display integration
+## 📌 Future Improvements
 
-Relay-based automation (fan/light control)
+- OLED display integration
+- Email or alert notifications
+- Relay-based automation
+- Mobile app dashboard
+- CSV export and analytics
+- Support for multiple sensors
 
-Data analytics and CSV export from ThingSpeak
+---
 
-👤 Author
-Rudrapratap Singh
+## 👤 Author
 
-📜 License
+**Rudrapratap Singh**
+
+GitHub: https://github.com/code-with-rps
+
+---
+
+## 📜 License
+
 This project is licensed under the MIT License.
